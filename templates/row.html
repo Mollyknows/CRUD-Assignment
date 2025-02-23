@@ -1,0 +1,28 @@
+{% extends 'index.html' %} {% block row %}
+<p>Please</p>
+{% for entry in table %}
+
+<tr>
+  <td>{{entry["task"]}}</td>
+  <td>{{entry["deadline"]}}</td>
+  <td>
+    {% if entry["complete"] %} Complete {% else %} Not Complete {% endif %}
+  </td>
+  <form>
+    <td>
+      <input type="submit" class="edit" value="Edit" />
+    </td>
+    <td>
+      <input type="submit" class="delete" value="Delete" />
+    </td>
+  </form>
+</tr>
+<tr class="editHide" id="">
+  <form>
+    <td><input type="text" name="editTask" /></td>
+    <td><input type="text" name="editDeadline" /></td>
+    <td><input type="checkbox" name="isComplete" /></td>
+    <td colspan="2"></td>
+  </form>
+</tr>
+{% endfor %} {% endblock %}

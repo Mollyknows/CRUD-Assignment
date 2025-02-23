@@ -1,0 +1,80 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  color: bisque;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.inputrow {
+  background-color: darkcyan;
+}
+
+.heading-align {
+  background-color: transparent;
+}
+
+body {
+  background-color: purple;
+}
+
+table {
+  border-collapse: collapse;
+  margin: auto;
+  min-width: 400px;
+  /* border: 1px red solid; */
+}
+
+.main {
+  margin-left: auto;
+  margin-top: 5%;
+  min-width: 400px;
+  width: inherit;
+  /* border: 1px red solid; */
+}
+
+th {
+  padding: 3px;
+}
+
+.tableheadings {
+  background-color: darkslateblue;
+}
+
+tr {
+  background-color: cornflowerblue;
+  border-bottom: 1px solid darkblue;
+}
+
+td {
+  text-align: center;
+  padding: 10px;
+}
+
+input,
+.edit,
+.delete {
+  color: dimgray;
+}
+
+.edit {
+  background-color: orange;
+  color: bisque;
+  border: 0px;
+  padding: 3px;
+  border-radius: 2px;
+}
+
+.delete {
+  color: bisque;
+  background-color: orangered;
+  border: 0px;
+  padding: 3px;
+  border-radius: 2px;
+}
+
+.editHide {
+  display: none;
+  background-color: darkorchid;
+}

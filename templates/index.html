@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../static/sitecss.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="main">
+      <table>
+        <tr class="heading-align">
+          <th>
+            <h1>To Do List</h1>
+          </th>
+        </tr>
+        <tr class="tableheadings">
+          <th>Task</th>
+          <th>Complete By</th>
+          <th>Complete</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+        <tr class="inputrow">
+          <form
+            action="{{url_for('newTask')}}"
+            method="post"
+            autocomplete="off"
+          >
+            <td><input type="text" id="Task" name="taskEnter" /></td>
+            <td><input type="text" id="CompleteBy" name="completeEnter" /></td>
+            <td>*</td>
+            <td colspan="2"><input type="submit" value="Submit" /></td>
+          </form>
+        </tr>
+        {% block row %} {% endblock %}
+      </table>
+    </div>
+  </body>
+</html>

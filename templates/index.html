@@ -18,19 +18,14 @@
           <th>Task</th>
           <th>Complete By</th>
           <th>Complete</th>
-          <th>Edit</th>
           <th>Delete</th>
         </tr>
         <tr class="inputrow">
-          <form
-            action="{{url_for('newTask')}}"
-            method="post"
-            autocomplete="off"
-          >
-            <td><input type="text" id="Task" name="taskEnter" /></td>
-            <td><input type="text" id="CompleteBy" name="completeEnter" /></td>
+          <form action="{{url_for('index')}}" method="post" autocomplete="off">
+            <td><input type="text" class="inputfield" id="Task" name="taskEnter" /></td>
+            <td><input type="text" class="inputfield" id="CompleteBy" name="completeEnter" /></td>
             <td>*</td>
-            <td colspan="2"><input type="submit" value="Submit" /></td>
+            <td colspan="2"><input class="button submit" type="submit" value="Submit" /></td>
           </form>
         </tr>
         {% block row %} {% endblock %}

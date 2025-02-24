@@ -2,25 +2,72 @@
 
 <tr>
   <td>{{entry["task"]}}</td>
-  <td>{{entry["deadline"]}}</td>
-  <td>
-    {% if entry["complete"] %} Complete {% else %} Not Complete {% endif %}
-  </td>
   <form>
     <td>
-      <input type="submit" class="edit" value="Edit" />
+      <input
+        type="text"
+        class="inputfield"
+        id="{{entry['id']}}"
+        data-index="{{loop.index}}"
+        value="{{entry['deadline']}}"
+        onfocus="oldStringUpdate(this.value, this.id)"
+        onblur="postOldString(this.value)"
+        onchange="postOldString(this.value)"
+      />
     </td>
+  </form>
+  <form>
+    {% if entry["complete"] %}
+    <td class="complete">Complete</td>
+    {% else %}
+    <td class="not-complete">Not Complete</td>
+    {% endif %}
+  </form>
+  <form>
     <td>
-      <input type="submit" class="delete" value="Delete" />
+      <input
+        type="submit"
+        class="button delete"
+        value="Delete"
+        title="{{entry['id']}}"
+        onclick="deleteRow(this.title)"
+      />
     </td>
   </form>
 </tr>
-<tr class="editHide" id="">
-  <form>
-    <td><input type="text" name="editTask" /></td>
-    <td><input type="text" name="editDeadline" /></td>
-    <td><input type="checkbox" name="isComplete" /></td>
-    <td colspan="2"></td>
-  </form>
-</tr>
-{% endfor %} {% endblock %}
+{% endfor %}
+<script>
+  //Wow... using fetch made so many pieces click
+  var idSelect = "";
+  var oldString = "";
+  function oldStringUpdate(currentString, currentID) {
+    this.idSelect = Number(currentID);
+    this.oldString = currentString;
+  }
+  function postOldString(newString) {
+    fetch("/row", {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        "old-string": oldString,
+        "new-string": newString,
+        location: idSelect,
+      }),
+    });
+  }
+  function deleteRow(id) {
+    id = Number(id);
+    fetch("/row", {
+      method: "DELETE",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        location: id,
+      }),
+    });
+  }
+</script>
+{% endblock %}

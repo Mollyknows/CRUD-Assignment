@@ -1,8 +1,8 @@
-insert into `list` (id, task, deadline, complete)
-values (1, "Wash Car", "Friday", TRUE);
+insert into `list` (task, deadline, complete, id)
+values ("Wash Car", "Friday", TRUE, null);
 
-insert into `list` (id, task, deadline, complete)
-values (2, "Study", "Wednesday", False);
+insert into `list` (task, deadline, complete, id)
+values ("Study", "Wednesday", False, null);
 
-insert into `list` (id, task, deadline, complete)
-values (3, "Pay Bills", "End of Month", TRUE);
+insert into `list` (task, deadline, complete, id)
+values ("Pay Bills", "End of Month", TRUE, null);

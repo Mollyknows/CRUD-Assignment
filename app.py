@@ -51,10 +51,6 @@ def index():
     for currentRow in cursor:
         table.append(currentRow)
     return render_template('row.html', table=table)
-    
-    
-
-
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int("5000"), debug=True)

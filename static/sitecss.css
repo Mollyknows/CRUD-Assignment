@@ -19,8 +19,10 @@ h1 {
 }
 
 body {
+  height: 100vh;
   background: purple;
   background: linear-gradient(225deg, rgb(53, 14, 115) 0%, purple 87%);
+  background-size: contain;
 }
 
 table {

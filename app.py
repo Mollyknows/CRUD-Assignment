@@ -8,10 +8,10 @@ app = Flask(__name__)
 app.secret_key = 'your secret key'
  
  
-app.config['MYSQL_HOST'] = 'localhost'
-app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = 'password'
-app.config['MYSQL_DB'] = 'todo_list'
+app.config['MYSQL_HOST'] = 'rds-mysql-tutorial.c1a4cwuciddj.us-east-2.rds.amazonaws.com'
+app.config['MYSQL_USER'] = 'admin'
+app.config['MYSQL_PASSWORD'] = 'Bombom456!'
+app.config['MYSQL_DB'] = 'TODO_List'
 
 table = []
 mysql = MySQL(app)
